@@ -1,37 +1,36 @@
 import discord
 from discord import app_commands
-import os
 from dotenv import load_dotenv
 import openai
 from openai import OpenAI
 import json
+import io
+import re
+import os
+import requests
+from typing import List
+from uuid import uuid4
+from urllib.parse import urlencode
+from langchain.vectorstores import Chroma
 from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI as LangChainOpenAI
 from langchain.utilities import SQLDatabase
-import matplotlib.pyplot as plt
-import io
-import re
-import requests
-from langchain_experimental.sql import SQLDatabaseChain
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-import os
-from tempfile import gettempdir
-from uuid import uuid4
-from urllib.parse import urlencode
-from transformers import pipeline
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.document_loaders import WebBaseLoader
 from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
-from notion import create_page
-from langchain.vectorstores import Chroma
-import chromadb
-from typing import List
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
+from langchain_experimental.sql import SQLDatabaseChain
+import matplotlib.pyplot as plt
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from tempfile import gettempdir
+from transformers import pipeline
+from notion import create_page
+import chromadb
 
 load_dotenv()
 
